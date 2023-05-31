@@ -6,5 +6,6 @@ class Main
     b1.printGrid();
     b1.play();
     b1.printGrid();
+    b1.checkWin();
   }
 }
