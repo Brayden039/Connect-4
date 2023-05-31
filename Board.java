@@ -3,6 +3,7 @@ public class Board
 {
   private int row;
   private int col;
+  private int turn;
   private String[][] grid;
   Scanner keyboard = new Scanner(System.in);
 
@@ -95,8 +96,26 @@ public class Board
 
   public void play()
   {
+    turn = 0;
     System.out.println("What col would you like to place your piece? ");
     int colPlacePiece = keyboard.nextInt();
+    //the piece needs to fall to the bottom however this code for now
+    for(int i = 0; i < row; i++)
+    {
+      if((grid[row][colPlacePiece] != "RED") && (grid[row][colPlacePiece] != "YELLOW"))
+      {
+        if(turn%2 == 0)
+        {
+          grid[row][col] = "YELLOW";
+          turn++;
+        }
+        else
+        {
+          grid[row][col] = "RED";
+          turn++;
+        }
+      }
+    }
     
   }
 

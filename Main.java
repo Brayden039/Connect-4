@@ -4,5 +4,7 @@ class Main
   {
     Board b1 = new Board();
     b1.printGrid();
+    b1.play();
+    b1.printGrid();
   }
 }
