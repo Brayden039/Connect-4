@@ -63,7 +63,7 @@ public class Board
     else
     {
       //the piece needs to fall to the bottom however this code for now
-      for(int i = row-1; i >= 0; i--)
+      for(int i = grid.length-1; i >= 0; i--)
       {
         if(grid[i][colPlacePiece] == "null")
         {
@@ -89,9 +89,9 @@ public class Board
   public boolean checkWin()
   {
     //across
-    for(int i = 0; i < row; i++)
+    for(int i = 0; i < grid.length; i++)
     {
-      for(int j = 0; j < col - 3; j++)
+      for(int j = 0; j < grid[0].length - 3; j++)
       {
         if(grid[i][j].equals("RED") && grid[i][j+1].equals("RED") && grid[i][j+2].equals("RED") && grid[i][j+3].equals("RED"))
         {
@@ -108,9 +108,9 @@ public class Board
       }
     }
     //up and down
-    for(int i2 = 0; i2 < row - 3; i2++)
+    for(int i2 = 0; i2 < grid.length - 3; i2++)
     {
-      for(int j2 = 0; j2 < col; j2++)
+      for(int j2 = 0; j2 < grid[0].length; j2++)
       {
         if(grid[i2][j2].equals("RED") && grid[i2+1][j2].equals("RED") && grid[i2+2][j2].equals("RED") && grid[i2+3][j2].equals("RED"))
         {
@@ -128,9 +128,9 @@ public class Board
     }
 
     //diag up
-    for(int i3 = 3; i3 < row; i3++)
+    for(int i3 = 3; i3 < grid.length; i3++)
     {
-      for(int j3 = 0; j3 < col-3; j3++)
+      for(int j3 = 0; j3 < grid[0].length-3; j3++)
       {
         if(grid[i3][j3].equals("RED") && grid[i3 - 1][j3+1].equals("RED") && grid[i3-2][j3+2].equals("RED") && grid[i3-3][j3+3].equals("RED"))
         {
@@ -147,11 +147,11 @@ public class Board
     }
       
       //diag down
-    for(int i4 = 0; i4 < row - 3; i4++)
+    for(int i4 = 0; i4 < grid.length - 3; i4++)
     {
-      for(int j4 = 0; j4 < col; j4++)
+      for(int j4 = 0; j4 < grid[0].length; j4++)
       {
-        if(grid[i4][j4].equals("RED") && grid[i4 - 1][j4+1].equals("RED") && grid[i4-2][j4+2].equals("RED") && grid[i4-3][j4+3].equals("RED"))
+        if(grid[i4][j4].equals("RED") && grid[i4 + 1][j4+1].equals("RED") && grid[i4+2][j4+2].equals("RED") && grid[i4+3][j4+3].equals("RED"))
         {
           System.out.println("Red wins!");
           win = true;
